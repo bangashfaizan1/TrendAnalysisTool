@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<style>
+		
+		.button {
+			font-family: "Nova Flat", sans-serif;
+			background-color: #3bba9c;
+			border: none;
+			color: white;
+			padding: 7.5px 25px;
+			text-align: center;
+			font-size: 16px;
+			cursor: pointer;
+			position: -webkit-sticky;
+			position: sticky;
+			left: 1218px;
+			top: 418px;
+		}
+		.button:hover {
+			background-color: #FFF;
+			color: #3bba9c;
+		}
+		.button:onclick {
+			makeitsnow();
+		}
+		
+		refbutton {
+			font-family: "Nova Flat", sans-serif;
+			background-color: #3bba9c;
+			border: none;
+			color: white;
+			padding: 7.5px 25px;
+			text-align: center;
+			font-size: 16px;
+			cursor: pointer;
+			position: -webkit-sticky;
+			position: sticky;
+			left: 1218px;
+			top: 418px;
+		}
+		refbutton:hover {
+			background-color: #FFF;
+			color: #3bba9c;
+		}
+		
+	</style>
+  
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+
+    <script
+      src="https://kit.fontawesome.com/2f8a1738f8.js"
+      crossorigin="anonymous"
+    ></script>
+	
+ 
+	
+    <script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/2152_RC04/embed_loader.js"></script>
+    <script type="text/javascript"> function makeitsnow() {
+	  var input = document.getElementById("searchtext").value;
+      trends.embed.renderExploreWidget("TIMESERIES", {"comparisonItem":[{"keyword":input,"geo":"US","time":"today 3-m"}],"category":0,"property":""}, {"exploreQuery":"date=today%203-m&geo=US&q=%2Fm%2F01jz6d","guestPath":"https://trends.google.com:443/trends/embed/"})
+      trends.embed.renderExploreWidget("RELATED_TOPICS", {"comparisonItem":[{"keyword":input,"geo":"US","time":"today 3-m"}],"category":0,"property":""}, {"exploreQuery":"date=today%203-m&geo=US&q="+input,"guestPath":"https://trends.google.com:443/trends/embed/"});
+	  trends.embed.renderExploreWidget("RELATED_QUERIES", {"comparisonItem":[{"keyword":input,"geo":"US","time":"today 3-m"}],"category":0,"property":""}, {"exploreQuery":"date=today%203-m&geo=US&q="+input,"guestPath":"https://trends.google.com:443/trends/embed/"})
+      trends.embed.renderExploreWidget("GEO_MAP", {"comparisonItem":[{"keyword":input,"geo":"US","time":"today 3-m"}],"category":0,"property":""}, {"exploreQuery":"date=today%203-m&geo=US&q="+input,"guestPath":"https://trends.google.com:443/trends/embed/"}) 
+	  var refbutton = document.createElement("refbutton");
+	  refbutton.innerHTML = "Return to Search";
+	  refbutton.style.fontFamily = "arial,sans-serif";
+	  refbutton.style.fontSize = 30;
+	  refbutton.style.color = '#FFF';
+	  refbutton.style.width = 150;
+	  refbutton.style.height = 50;
+	  refbutton.style.backgroundAttachment = "scroll"
+	  refbutton.style.top = "0px";
+	  refbutton.style.background='#3bba9c';
+	  var body = document.getElementsByTagName("body")[0];
+	  body.style.backgroundColor = '#2c2b30';
+	  body.appendChild(refbutton);
+	  
+	  refbutton.addEventListener("click", function refreshPage(){
+		window.location.reload();
+	  });
+    }; </script> 
+ 
+
+    <title>Twitter Showcase</title>
+  </head>
+  <body onload='document.getElementById("trends").onclick = makeitsnow;'>
+    <div id="root"></div>
+  </body>
+</html>
+
